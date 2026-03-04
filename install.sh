@@ -21,9 +21,9 @@ case "$DISTRIB_RELEASE" in
 	*"25.12"*)
 		branch="openwrt-25.12"
 		;;
-	"SNAPSHOT")
-		branch="SNAPSHOT"
-		;;
+	#"SNAPSHOT")
+		#branch="SNAPSHOT"
+		#;;
 	*)
 		echo "unsupported release: $DISTRIB_RELEASE"
 		exit 1
