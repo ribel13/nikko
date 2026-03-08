@@ -6,7 +6,7 @@ from multiprocessing import Pool, cpu_count
 
 target_folder = "htdocs/luci-static/resources/view/nikki"
 
-translator = GoogleTranslator(source='zh-CN', target='id')
+translator = GoogleTranslator(source='en-US', target='id')
 
 chinese_pattern = re.compile(r'[\u4e00-\u9fff]+')
 
