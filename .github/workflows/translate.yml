@@ -1,4 +1,4 @@
-name: Translate Chinese to Indonesia
+name: Translate Eng to Indonesia
 
 on:
   workflow_dispatch:
