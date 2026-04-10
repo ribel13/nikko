@@ -1,6 +1,7 @@
 {
     "admin/services/nikki": {
         "title": "Nikki",
+        "order": 2,
         "action": {
             "type": "firstchild"
         },
@@ -55,6 +56,14 @@
         "action": {
             "type": "view",
             "path": "nikki/log"
+        }
+    },
+    "admin/services/nikki/fulleditor": {
+        "title": "Full Editor",
+        "order": 70,
+        "action": {
+            "type": "view",
+            "path": "nikki/fulleditor"
         }
     }
 }

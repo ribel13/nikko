@@ -1,0 +1,68 @@
+<%+header%>
+
+<style>
+    .bold-title {
+        color: #DB002F;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: -1.5px;
+        margin-bottom: 20px;
+    }
+    .section-title {
+        color: #3600FF;
+        padding-left: 12px;
+        font-size: 17px;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    .custom-btn {
+        background: #B11ABD !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        padding: 8px 20px !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .custom-btn:hover {
+        background: #B70FF2 !important;
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(244, 0, 255, 0.4);
+    }
+    .alert-success-custom {
+        background: rgba(0, 200, 0, 0.1);
+        border: 1px solid #00c800;
+        color: #008000;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+</style>
+
+<% 
+ local status = luci.http.formvalue("status")
+ if status == "restore_ok" then 
+%>
+  <div class="alert-success-custom">✅ Restore berhasil dilakukan.</div>
+<% end %>
+
+<div class="cbi-section">
+    <div class="section-title">🔀 BACKUP SYSTEM</div>
+    <form method="post" action="<%=url('admin/services/nikki/do_backup')%>">
+        <input type="submit" class="custom-btn" value="Download Backup (.tar.gz)" />
+    </form>
+</div>
+
+<div class="cbi-section" style="margin-top: 30px;">
+    <div class="section-title">⏬ RESTORE SYSTEM</div>
+    <form method="post" enctype="multipart/form-data" action="<%=url('admin/services/nikki/do_restore')%>">
+        <div style="margin-bottom: 15px;">
+            <input type="file" name="upload" required style="font-weight: 600; color: #666;" />
+        </div>
+        <input type="submit" class="custom-btn" value="Upload & Restore" />
+    </form>
+</div>
+
+<%+footer%>
