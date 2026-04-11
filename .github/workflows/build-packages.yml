@@ -21,7 +21,7 @@ jobs:
           #- aarch64_cortex-a53
           #- aarch64_cortex-a72
           #- aarch64_cortex-a76
-          #- aarch64_generic
+          - aarch64_generic
           #- mips_24kc
           #- mips_4kec
           #- mips_mips32
